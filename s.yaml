@@ -21,9 +21,9 @@ resources:
           path: .
     props:
       region: ${vars.region}              
-      functionName: "{{ functionName }}"
+      functionName: "start-golang-4sx5"
       description: 'hello world by serverless devs'
-      runtime: "{{ runtime }}"
+      runtime: "go1"
       code: ./target
       handler: main
       memorySize: 128
