@@ -7,13 +7,10 @@ import (
 	"github.com/aliyun/fc-runtime-go-sdk/fc"
 )
 
-type StructEvent struct {
-	Key string `json:"key"`
-}
-
-func HandleRequest(ctx context.Context, event StructEvent) (string, error) {
-	fmt.Printf("hello, %s!\n", event.Key)
-	return fmt.Sprintf("hello, %s!", event.Key), nil
+func HandleRequest(ctx context.Context, event []byte) (string, error) {
+	fmt.Printf("event: %s\n", string(event))
+	fmt.Println("hello world! 你好，世界!")
+	return "hello world! 你好，世界!", nil
 }
 
 func main() {
