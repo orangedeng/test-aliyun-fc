@@ -5,10 +5,10 @@
 # ------------------------------------
 edition: 3.0.0
 name: test-handler
-access: "{{ access }}"
+access: "default"
 
 vars: # 全局变量
-  region: "{{ region }}"
+  region: "cn-shenzhen"
 
 resources:
   hello_world:
