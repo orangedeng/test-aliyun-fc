@@ -4,7 +4,7 @@
 #   有问题快来钉钉群问一下吧：33947367
 # ------------------------------------
 edition: 3.0.0
-name: test-handler
+name: hello-world-app
 access: "default"
 
 vars: # 全局变量
@@ -13,21 +13,15 @@ vars: # 全局变量
 resources:
   hello_world:
     component: fc3 
-    actions:       
-      pre-${regex('deploy|local')}: 
-        - run: GO111MODULE=on go mod tidy
-          path: .
-        - run: GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o target/main main.go
-          path: .
     props:
-      region: ${vars.region}              
-      functionName: "start-golang-4sx5"
+      region: ${vars.region}             
+      functionName: "start-nodejs-78km"
       description: 'hello world by serverless devs'
-      runtime: "go1"
-      code: ./target
-      handler: main
+      runtime: "nodejs20"
+      code: ./code
+      handler: index.handler
       memorySize: 128
-      timeout: 10
+      timeout: 30
       # triggers:
       #   - triggerName: httpTrigger # 触发器名称
       #     triggerType: http # 触发器类型
